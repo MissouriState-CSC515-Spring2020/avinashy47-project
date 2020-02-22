@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'winter',component:WinterComponent},
   {path:'spring',component:SpringComponent},
   {path:'details',component:DetailsComponent},
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'**', redirectTo:''}
 ];
 
