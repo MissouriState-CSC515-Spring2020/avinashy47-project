@@ -8,13 +8,15 @@ import { SwUpdate } from '@angular/service-worker'
 })
 export class AppComponent {
   title = 'checkpoint3';
-  swUpdate: any;
   newVersion: boolean;
   
-constructor(swUpdate: SwUpdate) { }
+constructor(
+  private readonly swUpdate: SwUpdate) { }
 ngOnInit() {
-  this.swUpdate.available
+  if (this.swUpdate) {
+    this.swUpdate.available
     .subscribe(update => this.newVersion = true);
+  }
 }
 // Make a button that only appears when newVersion and use this function as its action
 reload() {
