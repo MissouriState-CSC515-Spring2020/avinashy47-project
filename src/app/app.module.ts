@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 // new trial
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { YouTubeService } from './youtube.service';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     NgxSpinnerModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [YouTubeService],
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
 

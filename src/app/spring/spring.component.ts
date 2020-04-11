@@ -10,6 +10,8 @@ import { NgxSpinnerService } from '../ngx-spinner.service';
 export class SpringComponent implements OnInit {
 
   youtubeVideosArray: any[]
+  videoTitle: string;
+  videoSubscription: string;
 
   constructor(private youTubeService: YouTubeService,
     private spinner: NgxSpinnerService) { }
@@ -31,4 +33,13 @@ export class SpringComponent implements OnInit {
   });
   }
 
+  public captureVideoDetails(video: any) {
+    const videoDetails = {
+      title : video.snippet.title,
+      description: video.snippet.description
+    };
+    this.videoTitle = video.snippet.title;
+    this.videoSubscription = video.snippet.description
+    this.youTubeService.updateDetailsObject(videoDetails);
+  }
 }
