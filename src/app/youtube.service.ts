@@ -16,7 +16,8 @@ export class YouTubeService {
   public videoTitle;
   public videoDescription;
 
-  apiKey : string = 'AIzaSyA9aBRVPNTZOfmre40nnFWjfKGYT5VlVpY';
+  //apiKey : string = 'AIzaSyA9aBRVPNTZOfmre40nnFWjfKGYT5VlVpY';
+  apiKey : string = 'AIzaSyDEwHj8XZLubYUwUqfcHGJz7A5IHhdDIwI'
 
   constructor(public http: HttpClient) {
     this.videoDetails$ = this.videoDetailsSubject$.asObservable().pipe(filter((details: YouTubeVideoDetails) => !!details));
