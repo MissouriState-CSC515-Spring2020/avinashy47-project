@@ -8,7 +8,9 @@ export interface YouTubeVideoDetails {
   description?: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
 export class YouTubeService {
   public videoDetails$: Observable<YouTubeVideoDetails | null>;
@@ -16,8 +18,9 @@ export class YouTubeService {
   public videoTitle;
   public videoDescription;
 
-  //apiKey : string = 'AIzaSyA9aBRVPNTZOfmre40nnFWjfKGYT5VlVpY';
+  // apiKey : string = 'AIzaSyA9aBRVPNTZOfmre40nnFWjfKGYT5VlVpY';
   apiKey : string = 'AIzaSyDEwHj8XZLubYUwUqfcHGJz7A5IHhdDIwI'
+  // apiKey : string = 'AIzaSyA2XD5vkwEV1lWC_sn_j4mF3iHXhG9fgGA';
 
   constructor(public http: HttpClient) {
     this.videoDetails$ = this.videoDetailsSubject$.asObservable().pipe(filter((details: YouTubeVideoDetails) => !!details));
@@ -35,5 +38,6 @@ export class YouTubeService {
   public updateDetailsObject(details: YouTubeVideoDetails) {
     sessionStorage.setItem('youtube_title', details.title);
     sessionStorage.setItem('youtube_description', details.description);
+    this.videoDetailsSubject$.next(details);
   }
 }
