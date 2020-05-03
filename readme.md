@@ -1,3 +1,11 @@
-# Repository for class project
+# Checkpoint3
 
-Create a Hello World ! page for checkpoint 1
+Convert previous Checkpoint - 2 multiple HTML pages into components using Angular Framework.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
