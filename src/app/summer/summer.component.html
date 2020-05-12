@@ -2,9 +2,26 @@
     <p></p>
       <div class="responsive">
         <div class="grid">
-          <a href="./details"><img src="../../assets/Images/Summer1.jpeg"></a>
+          <!-- <a href="./details"><img src="../../assets/Images/Summer1.jpeg"></a>
           <a href="./details"><img src="../../assets/Images/Summer2.jpg"></a>
-          <a href="./details"><img src="../../assets/Images/Summer3.jpeg"></a>
+          <a href="./details"><img src="../../assets/Images/Summer3.jpeg"></a> -->
+        </div>
+        <router-outlet></router-outlet>
+        <h3>Video's list from Youtube</h3>
+        <div class="grid">
+          <div *ngFor="let video of youtubeVideosArray" class="col-xl-3 col-lg-variable col-md-6 mb-4" (click)="captureVideoDetails(video)">
+            <div class="card border-0 shadow vh-50">
+              <a href="./details" target="">
+                <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a>
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">
+                  <a href="./details">{{video.snippet.title}}
+                  </a></h5>
+              <!-- <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div> -->
+              <!-- <p class="card-text">{{video.snippet.description}}</p> -->
+            </div>
+          </div>
         </div>
       </div>
+      </div> 
     </body>

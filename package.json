@@ -5,11 +5,12 @@
   "license": "UNLICENSED",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -22,9 +23,16 @@
     "@angular/platform-browser-dynamic": "~9.0.1",
     "@angular/router": "~9.0.1",
     "@angular/service-worker": "~9.0.1",
+    "@angular/youtube-player": "^9.2.0",
+    "@types/youtube": "0.0.38",
+    "angular-youtube-player": "^1.0.3",
+    "ng2-youtube-player": "0.0.31",
+    "ngx-spinner": "^9.0.2",
+    "ngx-youtube-player": "^7.1.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "bootstrap": "3.3.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.2",
