@@ -11,11 +11,11 @@
   <div class="grid">
     <div *ngFor="let video of youtubeVideosArray" class="col-xl-3 col-lg-variable col-md-6 mb-4" (click)="captureVideoDetails(video)">
       <div class="card border-0 shadow vh-50">
-        <a href="./details" target="">
+        <a [routerLink]="['/details']">
           <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a>
         <div class="card-body text-center">
           <h5 class="card-title mb-0">
-            <a href="./details">{{video.snippet.title}}
+            <a [routerLink]="['/details']">{{video.snippet.title}}
             </a></h5>
           <!-- <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div> -->
           <!-- <p class="card-text">{{video.snippet.description}}</p> -->

@@ -1,14 +1,15 @@
-# Checkpoint5
+# Checkpoint6
 
-Update your application to be a YouTube video site (rather than photos). Use the YouTube Data API to pull data:
+project should only load the initial view. As the user navigates to other pages, JavaScript for the other views should load on demand.
 
--added youtube service files and modified the components accordingly.
+## Steps to install app
 
+1. Run 'npm install'
+
+2. Run 'sudo npm install -g http-server'
 ## Build
-
-Run `ng build --prod` to build the project.
-
-Run 'http-server -o 8080 -c-1 dist/checkpoint3' to run the server
+3. Run `ng build --prod` to build the project.
 
 ## To start the app
-Run 'ng serve -o'
+
+4. Run 'http-server -o 8080 -c-1 dist/checkpoint3' to run the server

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,28 +16,58 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { YouTubeService } from './youtube.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummerComponent,
-    WinterComponent,
-    SpringComponent,
-    RainComponent,
-    DetailsComponent,
-    HomeComponent
+    // SummerComponent,
+    // WinterComponent,
+    // SpringComponent,
+    // RainComponent,
+    // DetailsComponent,
+    // HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    // BrowserModule.withServerTransition({ appId: 'angular-starter' }),
+    // BrowserTransferStateModule,
+    // AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    RouterModule.forRoot([
+      {
+        path: '', 
+        loadChildren: () =>  import('./home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'summer', 
+        loadChildren: () =>  import('./summer/summer.module').then(m => m.SummerModule)
+      },
+      {
+        path: 'rain', 
+        loadChildren: () =>  import('./rain/rain.module').then(m => m.RainModule)
+      },
+      {
+        path: 'winter', 
+        loadChildren: () =>  import('./winter/winter.module').then(m => m.WinterModule)
+      },
+      {
+        path: 'spring', 
+        loadChildren: () =>  import('./spring/spring.module').then(m => m.SpringModule)
+      }
+      ,
+      {
+        path: 'details', 
+        loadChildren: () =>  import('./details/details.module').then(m => m.DetailsModule)
+      }
+
+    ])
   ],
-  providers: [YouTubeService],
-  bootstrap: [AppComponent],
-  exports: []
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 
